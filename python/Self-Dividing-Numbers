@@ -1,0 +1,21 @@
+class Solution(object):
+    def selfDividingNumbers(self, left, right):
+        """
+        :type left: int
+        :type right: int
+        :rtype: List[int]
+        """
+        rlist = []
+        for num in range(left,right+1):
+            num_tmp = num
+            flag = True
+            while num_tmp > 0:
+                num_remain = num_tmp%10
+                if num_remain == 0 or num%num_remain != 0:
+                    flag = False
+                    break
+                num_tmp = num_tmp/10
+            if flag:
+                rlist.append(num)
+                
+        return rlist
