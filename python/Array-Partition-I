@@ -1,0 +1,11 @@
+class Solution(object):
+    def arrayPairSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        nums = sorted(nums)
+        sum_max = 0
+        for index in range(0,len(nums),2):
+            sum_max += nums[index]
+        return sum_max
